@@ -1,0 +1,6 @@
+{
+  "name": "openDSME",
+  "tagline": "Open-Source Implementation of the IEEE 802.15.4 DSME Link Layer",
+  "body": "openDSME is meant to be portable for various platforms, including simulation environments and hardware platforms. However, currently only the OMNeT++ simulation environment is supported.\r\n\r\n### OMNeT++ / INET\r\nThe current development of openDSME takes place inside a fork of the INET framework that can be found at <https://github.com/openDSME/inet>.",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
