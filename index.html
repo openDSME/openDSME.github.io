@@ -13,10 +13,13 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>openDSME by openDSME</title>
+    <title>openDSME</title>
     <style media="screen" type="text/css">
         aside a.button.code {
             background: transparent url(images/code-button.png) 0 0 no-repeat;
+        }
+        aside a.button.live {
+            background: transparent url(images/live-button.png) 0 0 no-repeat;
         }
         aside a.button.wiki {
             background: transparent url(images/wiki-button.png) 0 0 no-repeat;
@@ -39,15 +42,26 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <p>openDSME is meant to be portable for various platforms, including simulation environments and hardware platforms. Currently only the OMNeT++ simulation environment is supported.</p>
+          <p>openDSME is meant to be portable for various platforms, including simulation environments and hardware platforms. Therefore, multiple modules are required to run the software.</p>
             <h3>
-                <a id="omnet--inet" class="anchor" href="#omnet--inet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OMNeT++ / INET
+                <a id="openDSME" class="anchor" href="#openDSME" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>openDSME
             </h3>
-            <p>The current development of openDSME takes place inside a fork of the INET framework that can be found at <a href="https://github.com/openDSME/openDSME">https://github.com/openDSME/openDSME</a>.</p>
+            <p>The repository of the core module can be found at <a href="https://github.com/openDSME/openDSME">github.com/openDSME/openDSME</a>. Probably you never have to check out this repository directly, because it is integrated as a submodule in the other repositories.</p>
+
+            <h3>
+                <a id="inet--dsme" class="anchor" href="#inet--dsme" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INET DSME
+            </h3>
+            <p>Currently only the OMNeT++ simulation environment is supported using the INET framework. The adaptation logic to run openDSME inside of INET is implemented in the repository <a href="https://github.com/openDSME/openDSME">github.com/openDSME/inet-dsme</a>. Simulation results from the latest test run are available at <a href="http://www.opendsme.org/inet-dsme">www.opendsme.org/inet-dsme</a>.</p>
+
+            <h3>
+                <a id="inet" class="anchor" href="#inet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INET
+            </h3>
+            <p>For development we use a fork of the INET framework at <a href="https://github.com/openDSME/openDSME">github.com/openDSME/inet</a>, including minor additions to the integration branch of <a href="https://github.com/inet-framework/inet">github.com/inet-framework/inet</a>.</p>
         </section>
 
         <aside id="sidebar">
         <a href="https://github.com/openDSME/openDSME" class="button code">Code</a>
+        <a href="http://www.opendsme.org/inet-dsme" class="button live">Live Results</a>
         <a href="https://github.com/openDSME/openDSME/wiki" class="button wiki">Wiki</a>
         </aside>
       </div>
