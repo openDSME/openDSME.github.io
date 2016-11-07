@@ -1,70 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <!--[if lt IE 9]>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+  <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>openDSME</title>
-    <style media="screen" type="text/css">
-        aside a.button.code {
-            background: transparent url(images/code-button.png) 0 0 no-repeat;
-        }
-        aside a.button.live {
-            background: transparent url(images/live-button.png) 0 0 no-repeat;
-        }
-        aside a.button.wiki {
-            background: transparent url(images/wiki-button.png) 0 0 no-repeat;
-        }
-    </style>
+  <title>openDSME</title>
+  <style media="screen" type="text/css">
+    aside a.button.code {
+      background: transparent url(images/code-button.png) 0 0 no-repeat;
+    }
     
+    aside a.button.live {
+      background: transparent url(images/live-button.png) 0 0 no-repeat;
+    }
     
-  </head>
+    aside a.button.wiki {
+      background: transparent url(images/wiki-button.png) 0 0 no-repeat;
+    }
+  </style>
 
-  <body>
-    <header>
-      <div class="inner">
-        <img src="images/opendsme_wb.png" alt="openDSME logo" style="width:200px" />
-        <!--<h1>openDSME</h1>-->
-        <h2>Open-Source Implementation of the IEEE 802.15.4 DSME Link Layer</h2>
-        <!--<a href="https://github.com/openDSME" class="button"><small>Follow me on</small> GitHub</a>-->
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <p>openDSME is meant to be portable for various platforms, including simulation environments and hardware platforms. Therefore, multiple modules are required to run the software.</p>
-            <h3>
-                <a id="openDSME" class="anchor" href="#openDSME" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>openDSME
-            </h3>
-            <p>The repository of the core module can be found at <a href="https://github.com/openDSME/openDSME">github.com/openDSME/openDSME</a>. Probably you never have to check out this repository directly, because it is integrated as a submodule in the other repositories.</p>
+</head>
 
-            <h3>
-                <a id="inet--dsme" class="anchor" href="#inet--dsme" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INET DSME
-            </h3>
-            <p>Currently only the OMNeT++ simulation environment is supported using the INET framework. The adaptation logic to run openDSME inside of INET is implemented in the repository <a href="https://github.com/openDSME/inet-dsme">github.com/openDSME/inet-dsme</a>. Simulation results from the latest test run are available at <a href="http://www.opendsme.org/inet-dsme">www.opendsme.org/inet-dsme</a>.</p>
+<body>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-86950199-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <header>
+    <div class="inner">
+      <img src="images/opendsme_wb.png" alt="openDSME logo" style="width:200px" />
+      <!--<h1>openDSME</h1>-->
+      <h2>Open-Source Implementation of the IEEE 802.15.4 DSME Link Layer</h2>
+      <!--<a href="https://github.com/openDSME" class="button"><small>Follow me on</small> GitHub</a>-->
+    </div>
+  </header>
 
-            <h3>
-                <a id="inet" class="anchor" href="#inet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INET
-            </h3>
-            <p>For development we use a fork of the INET framework at <a href="https://github.com/openDSME/openDSME">github.com/openDSME/inet</a>, including minor additions to the integration branch of <a href="https://github.com/inet-framework/inet">github.com/inet-framework/inet</a>.</p>
-        </section>
+  <div id="content-wrapper">
+    <div class="inner clearfix">
+      <section id="main-content">
+        <p>openDSME is meant to be portable for various platforms, including simulation environments and hardware platforms.
+          Therefore, multiple modules are required to run the software.</p>
+        <h3>
+          <a id="openDSME" class="anchor" href="#openDSME" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>openDSME
+        </h3>
+        <p>The repository of the core module can be found at <a href="https://github.com/openDSME/openDSME">github.com/openDSME/openDSME</a>.
+          Probably you never have to check out this repository directly, because it is integrated as a submodule in the other
+          repositories.
+        </p>
 
-        <aside id="sidebar">
+        <h3>
+          <a id="inet--dsme" class="anchor" href="#inet--dsme" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INET
+          DSME
+        </h3>
+        <p>Currently only the OMNeT++ simulation environment is supported using the INET framework. The adaptation logic to
+          run openDSME inside of INET is implemented in the repository <a href="https://github.com/openDSME/inet-dsme">github.com/openDSME/inet-dsme</a>.
+          Simulation results from the latest test run are available at <a href="http://www.opendsme.org/inet-dsme">www.opendsme.org/inet-dsme</a>.</p>
+
+        <h3>
+          <a id="inet" class="anchor" href="#inet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INET
+        </h3>
+        <p>For development we use a fork of the INET framework at <a href="https://github.com/openDSME/openDSME">github.com/openDSME/inet</a>,
+          including minor additions to the integration branch of <a href="https://github.com/inet-framework/inet">github.com/inet-framework/inet</a>.</p>
+      </section>
+
+      <aside id="sidebar">
         <a href="https://github.com/openDSME/openDSME" class="button code">Code</a>
         <a href="http://www.opendsme.org/inet-dsme" class="button live">Live Results</a>
         <a href="https://github.com/openDSME/openDSME/wiki" class="button wiki">Wiki</a>
-        </aside>
-      </div>
+      </aside>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
