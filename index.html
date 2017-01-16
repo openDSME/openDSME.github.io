@@ -45,7 +45,7 @@
     <div class="inner">
       <img src="images/opendsme_wb.png" alt="openDSME logo" style="width:200px" />
       <!--<h1>openDSME</h1>-->
-      <h2>Open-Source Implementation of the IEEE 802.15.4 DSME Link Layer</h2>
+      <h2>Open-Source Implementation of the<br />IEEE 802.15.4 DSME Link Layer</h2>
       <!--<a href="https://github.com/openDSME" class="button"><small>Follow me on</small> GitHub</a>-->
     </div>
   </header>
@@ -53,11 +53,21 @@
   <div id="content-wrapper">
     <div class="inner clearfix">
       <section id="main-content">
-        <p>openDSME is meant to be portable for various platforms, including simulation environments and hardware platforms.
-          Therefore, multiple modules are required to run the software.</p>
+        <h3>
+          <a id="whatisopenDSME" class="anchor" href="#whatisopenDSME" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+          What is openDSME?
+        </h3>
+        <p>openDSME is an open source implementation of IEEE 802.15.4 DSME.
+It is designed be portable for various platforms, including simulation environments and hardware platforms. It is developed at the <a href="http://www.ti5.tu-harburg.de/">Institute of Telematics at Hamburg University of Technology</a>. Feel free to <a href="http://www.ti5.tu-harburg.de/staff/meier/">contact us</a> if you are interested in using our software or just have a look at the provided repositories.</p>  
+        <h3>
+          <a id="whatisDSME" class="anchor" href="#whatisDSME" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+          What is IEEE 802.15.4 DSME?
+        </h3>
+        <p>The IEEE 802.15.4 standard with its widespread usage in wireless sensor and actuator networks was recently extended by several techniques that allow reliable data transmission for critical applications, such as industrial plants. This includes the Deterministic and Synchronous Multi-channel Extension (DSME) that allows for distributed assignment of time slots on multiple channels.</p>
+
         <h3>
           <a id="openDSME" class="anchor" href="#openDSME" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-          openDSME
+          Main repository of openDSME
         </h3>
         <p>The repository of the core module can be found at <a href="https://github.com/openDSME/openDSME">github.com/openDSME/openDSME</a>.
           Probably, you will never have to check out this repository directly, because it is integrated as a submodule in the other repositories.
@@ -65,25 +75,26 @@
 
         <h3>
           <a id="inet--dsme" class="anchor" href="#inet--dsme" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-          INET DSME
+          OMNeT++ / INET
           <img src="https://img.shields.io/travis/openDSME/inet-dsme/master.svg" alt="Travis CI Build Status" style="height: 16px; margin-left: 20px;"/>
           <img src="https://img.shields.io/coverity/scan/11194.svg" alt="Coverity Scan Build Status" style="height: 16px; margin-left: 20px;"/>
         </h3>
-        <p>Currently, only the OMNeT++ simulation environment is supported using the INET framework. The adaptation logic to
-          run openDSME inside of INET is implemented in the repository <a href="https://github.com/openDSME/inet-dsme">github.com/openDSME/inet-dsme</a>.
-          Simulation results from the latest test run are available at <a href="http://www.opendsme.org/inet-dsme">www.opendsme.org/inet-dsme</a>.</p>
+        <p>For conducting simulations, openDSME can run in the <a href="https://omnetpp.org/">OMNeT++ simulation environment</a> using the INET framework. The adaptation logic to run openDSME inside of INET is implemented in <a href="https://github.com/openDSME/inet-dsme">this repository</a>. For development we use a <a href="https://github.com/openDSME/inet">fork</a> that includes minor additions to the integration branch of the <a href="https://github.com/inet-framework/inet">INET framework</a>.</p>
+
+          We also provide <a href="http://www.opendsme.org/inet-dsme">simulation results from the latest test runs</a>.</p>
 
         <h3>
-          <a id="inet" class="anchor" href="#inet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INET
+          <a id="cometos" class="anchor" href="#cometos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+          CometOS
         </h3>
-        <p>For development we use a fork of the INET framework at <a href="https://github.com/openDSME/inet">github.com/openDSME/inet</a>,
-          including minor additions to the integration branch of <a href="https://github.com/inet-framework/inet">github.com/inet-framework/inet</a>.</p>
+        <p>For hardware deployments, openDSME is supported by the <a href="https://github.com/CometOS/CometOS">CometOS environment</a>. Currently, our main hardware platform is the ARM based <a href="https://www.iot-lab.info/hardware/m3/">M3 Open Node</a> used by the <a href="https://www.iot-lab.info/">FIT IoT-lab</a>.
+
       </section>
 
       <aside id="sidebar">
-        <a href="https://github.com/openDSME/openDSME" class="button code">Code</a>
+        <a href="https://github.com/openDSME" class="button code">Code</a>
         <a href="http://www.opendsme.org/inet-dsme" class="button live">Live Results</a>
-        <a href="https://github.com/openDSME/openDSME/wiki" class="button wiki">Wiki</a>
+        <!--<a href="https://github.com/openDSME/openDSME/wiki" class="button wiki">Wiki</a>-->
         <script type="text/javascript" id="WolframAlphaScript3f63662ae7084d9618e3b3e291f94b41" src="//www.wolframalpha.com/widget/widget.jsp?id=3f63662ae7084d9618e3b3e291f94b41&theme=orange"></script>
       </aside>
     </div>
