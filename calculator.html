@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Send Interval Calculator</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.js"></script>
+</head>
+
+<body>
+  <form>
+    Nodes:<br>
+    <input type="text" name="nodes" value="61"><br>
+    SO:<br>
+    <input type="text" name="SO" value="3"><br>
+    MO:<br>
+    <input type="text" name="MO" value="5"><br><br>
+    <input type="checkbox" name="capReduction" id="capReduction">CapReduction<br><br>
+    <input type="button" onclick="calculate()" value="Calculate"><br><br>
+    Resulting Send Interval:<br>
+    <input type="text" name="interval" disabled><br>
+  </form>
+  <div id="result"></div>
+
+  <script>
+    function calculate() {
+      form = document.forms[0];
+
+      var nodes             = parseInt(form.elements['nodes'].value);
+      var symbolDuration    = 16;
+      var aBaseSlotDuration = 60;
+      var SO                = parseInt(form.elements['SO'].value);
+      var MO                = parseInt(form.elements['MO'].value);
+      var capReduction      = form.elements['capReduction'].checked;
+      console.log(nodes, SO, MO, capReduction);
+
+      var gtsPerMultiSuperFrame;
+      if (capReduction) {
+        gtsPerMultiSuperFrame = 15 * Math.pow(2, MO - SO) - 8;
+      } else {
+        gtsPerMultiSuperFrame = 7 * Math.pow(2, MO - SO);
+      }
+      console.log('gtsPerMultiSuperFrame =', gtsPerMultiSuperFrame);
+
+      var multiSuperFrameDuration = aBaseSlotDuration * symbolDuration * 16 * Math.pow(2, MO);
+      console.log('multiSuperFrameDuration =', multiSuperFrameDuration, 'μs');
+
+      var interval = nodes * multiSuperFrameDuration / gtsPerMultiSuperFrame / Math.pow(10, 6);
+      console.log('interval =', interval);
+
+      form.elements['interval'].value = interval.toPrecision(5);
+    }
+  </script>
+</body>
+</html>
