@@ -277,10 +277,53 @@ It is designed be portable for various platforms, including simulation environme
         <!--<a href="https://github.com/openDSME/openDSME/wiki" class="button wiki">Wiki</a>-->
         <!--<script type="text/javascript" id="WolframAlphaScript3f63662ae7084d9618e3b3e291f94b41" src="//www.wolframalpha.com/widget/widget.jsp?id=3f63662ae7084d9618e3b3e291f94b41&theme=orange"></script>
         <script type="text/javascript" id="WolframAlphaScriptecb4107d833b6db777fab761ee6ebab3" src="//www.wolframalpha.com/widget/widget.jsp?id=ecb4107d833b6db777fab761ee6ebab3&theme=orange"></script>-->
-        <iframe frameBorder="0" scrolling="no" height="430" src="calculator.html"></iframe>
+        <div>
+          <h3 style="width:176px;">Calculate maximum send interval for a star topology</h3>
+          <form style="background-color: transparent; border: solid; width:176px; padding: 10px;">
+            Nodes:<br>
+            <input type="text" name="nodes" value="61"><br>
+            SO:<br>
+            <input type="text" name="SO" value="3"><br>
+            MO:<br>
+            <input type="text" name="MO" value="5"><br><br>
+            <input type="checkbox" name="capReduction" id="capReduction">CapReduction<br><br>
+            <input type="button" onclick="calculate()" value="Calculate"><br><br>
+            Resulting Send Interval:<br>
+            <input type="text" name="interval" disabled><br>
+          </form>
+        </div>
       </aside>
     </div>
   </div>
+  <script>
+    function calculate() {
+      form = document.forms[0];
+
+      var nodes             = parseInt(form.elements['nodes'].value);
+      var symbolDuration    = 16;
+      var aBaseSlotDuration = 60;
+      var SO                = parseInt(form.elements['SO'].value);
+      var MO                = parseInt(form.elements['MO'].value);
+      var capReduction      = form.elements['capReduction'].checked;
+      console.log(nodes, SO, MO, capReduction);
+
+      var gtsPerMultiSuperFrame;
+      if (capReduction) {
+        gtsPerMultiSuperFrame = 15 * Math.pow(2, MO - SO) - 8;
+      } else {
+        gtsPerMultiSuperFrame = 7 * Math.pow(2, MO - SO);
+      }
+      console.log('gtsPerMultiSuperFrame =', gtsPerMultiSuperFrame);
+
+      var multiSuperFrameDuration = aBaseSlotDuration * symbolDuration * 16 * Math.pow(2, MO);
+      console.log('multiSuperFrameDuration =', multiSuperFrameDuration, 'μs');
+
+      var interval = nodes * multiSuperFrameDuration / gtsPerMultiSuperFrame / Math.pow(10, 6);
+      console.log('interval =', interval);
+
+      form.elements['interval'].value = interval.toPrecision(4) + " s";
+    }
+  </script>
 </body>
 
 </html>
