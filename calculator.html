@@ -53,7 +53,7 @@
       var interval = nodes * multiSuperFrameDuration / gtsPerMultiSuperFrame / Math.pow(10, 6);
       console.log('interval =', interval);
 
-      form.elements['interval'].value = interval.toPrecision(5);
+      form.elements['interval'].value = interval.toPrecision(4) + " s";
     }
   </script>
 </body>
