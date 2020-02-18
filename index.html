@@ -35,7 +35,7 @@
 		var abs = document.getElementById('abs_'+articleid);
 		var rev = document.getElementById('rev_'+articleid);
 		var bib = document.getElementById('bib_'+articleid);
-		
+
 		if (abs && info == 'abstract') {
 			if (abs.className.indexOf('abstract') != -1) {
 				abs.className.indexOf('noshow') == -1?abs.className = 'abstract noshow':abs.className = 'abstract';
@@ -47,8 +47,8 @@
 		} else if (bib && info == 'bibtex') {
 			if (bib.className.indexOf('bibtex') != -1) {
 				bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex';
-			}       
-		} else { 
+			}
+		} else {
 			return;
 		}
 
@@ -57,16 +57,16 @@
 		var absshow = false;
 		var bibshow = false;
 		(abs && abs.className.indexOf('noshow') == -1) ? absshow = true : absshow = false;
-		(rev && rev.className.indexOf('noshow') == -1) ? revshow = true : revshow = false;    
+		(rev && rev.className.indexOf('noshow') == -1) ? revshow = true : revshow = false;
 		(bib && bib.className == 'bibtex') ? bibshow = true : bibshow = false;
-		
+
 		// highlight original entry
 		if(entry) {
 			if (revshow || absshow || bibshow) {
 				entry.className = 'bibEntry highlight show';
 			} else {
 				entry.className = 'bibEntry show';
-			}       
+			}
 		}
 	}
   </script>
@@ -87,192 +87,296 @@
       background: transparent url(images/wiki-button.png) 0 0 no-repeat;
     }
   </style>
-
-
 </head>
 
 <body>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-86950199-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-  <header>
-    <div class="inner" style="overflow:hidden;">
-      <div style="float:left">
-        <img src="images/opendsme_wb.png" alt="openDSME logo" style="width:200px" />
-        <!--<h1>openDSME</h1>-->
-        <h2>Open-Source Implementation of the<br />IEEE 802.15.4 DSME Link Layer</h2>
-        <!--<a href="https://github.com/openDSME" class="button"><small>Follow me on</small> GitHub</a>-->
-      </div>
-      <div style="float:right; max-width:280px; text-align:center;">
-        <img src="images/kuvs.svg" alt="KUVS award" style="height:80px; float:left; margin-top:10px" />
-        <h3 style="margin-left:5px;">
-          <a style="color:#9ddcff;" href="http://netsys17.uni-goettingen.de/?page_id=90">
-            Winner of the GI KuVS <span style="text-decoration:underline;">Communication Software Award</span> 2017
-          </a>
-        </h3>
-      </div>
-    </div>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-86950199-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <header>
+        <div class="inner" style="overflow:hidden;">
+            <div style="float:left">
+                <img src="images/opendsme_wb.png" alt="openDSME logo" style="width:200px" />
+                <!--<h1>openDSME</h1>-->
+                <h2>Open-Source Implementation of the<br />IEEE 802.15.4 DSME Link Layer</h2>
+                <!--<a href="https://github.com/openDSME" class="button"><small>Follow me on</small> GitHub</a>-->
+            </div>
+            <div style="float:right; max-width:280px; text-align:center;">
+                <img src="images/kuvs.svg" alt="KUVS award" style="height:80px; float:left; margin-top:10px" />
+                <h3 style="margin-left:5px;">
+                    <a style="color:#9ddcff;" href="http://netsys17.uni-goettingen.de/?page_id=90">
+                        Winner of the GI KuVS <span style="text-decoration:underline;">Communication Software Award</span> 2017
+                    </a>
+                </h3>
+            </div>
+        </div>
+    </header>
 
-  </header>
+    <div id="content-wrapper">
+        <div class="inner clearfix">
+            <section id="main-content">
+                <h3>
+                    <a id="whatisopenDSME" class="anchor" href="#whatisopenDSME" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+                    What is openDSME?
+                </h3>
+                <p>openDSME is an open source implementation of IEEE 802.15.4 DSME.
+                    It is designed be portable for various platforms, including simulation environments and hardware platforms. It is developed at the <a href="http://www.ti5.tu-harburg.de/">Institute of Telematics at Hamburg University of
+                        Technology</a>. Feel free to <a href="http://www.ti5.tu-harburg.dehttps://www.ti5.tuhh.de/staff/meier/">contact us</a> if you are interested in using our software or just have a look at the provided repositories.</p>
+                <h3>
+                    <a id="whatisDSME" class="anchor" href="#whatisDSME" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+                    What is IEEE 802.15.4 DSME?
+                </h3>
+                <p>The IEEE 802.15.4 standard with its widespread usage in wireless sensor and actuator networks was recently extended by several techniques that allow reliable data transmission for critical applications, such as industrial plants.
+                    This includes the Deterministic and Synchronous Multi-channel Extension (DSME) that allows for distributed assignment of time slots on multiple channels.</p>
+                <h3>
+                    <a id="tutorial" class="anchor" href="#tutorial" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+                    openDSME Video Tutorials
+                </h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLucSPeJjMBgwOgIRB1GKiST__vPgwd2tQ" frameborder="0" allowfullscreen style="max-width: 100%;"></iframe>
+                <h3>
+                    <a id="openDSME" class="anchor" href="#openDSME" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+                    Main repository of openDSME
+                </h3>
+                <p>The repository of the core module can be found at <a href="https://github.com/openDSME/openDSME">github.com/openDSME/openDSME</a>.
+                    Probably, you will never have to check out this repository directly, because it is integrated as a submodule in the other repositories.
+                </p>
 
-  <div id="content-wrapper">
-    <div class="inner clearfix">
-      <section id="main-content">
-        <h3>
-          <a id="whatisopenDSME" class="anchor" href="#whatisopenDSME" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-          What is openDSME?
-        </h3>
-        <p>openDSME is an open source implementation of IEEE 802.15.4 DSME.
-It is designed be portable for various platforms, including simulation environments and hardware platforms. It is developed at the <a href="http://www.ti5.tu-harburg.de/">Institute of Telematics at Hamburg University of Technology</a>. Feel free to <a href="http://www.ti5.tu-harburg.dehttps://www.ti5.tuhh.de/staff/meier/">contact us</a> if you are interested in using our software or just have a look at the provided repositories.</p>  
-        <h3>
-          <a id="whatisDSME" class="anchor" href="#whatisDSME" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-          What is IEEE 802.15.4 DSME?
-        </h3>
-        <p>The IEEE 802.15.4 standard with its widespread usage in wireless sensor and actuator networks was recently extended by several techniques that allow reliable data transmission for critical applications, such as industrial plants. This includes the Deterministic and Synchronous Multi-channel Extension (DSME) that allows for distributed assignment of time slots on multiple channels.</p>
+                <h3>
+                    <a id="inet--dsme" class="anchor" href="#inet--dsme" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+                    OMNeT++ / INET
+                    <img src="https://img.shields.io/coverity/scan/11194.svg" alt="Coverity Scan Build Status" style="height: 16px; margin-left: 20px;" />
+                </h3>
+                <p>For conducting simulations, openDSME can run in the <a href="https://omnetpp.org/">OMNeT++ simulation environment</a> using the INET framework. The adaptation logic to run openDSME inside of INET is implemented in <a
+                        href="https://github.com/openDSME/inet-dsme">this repository</a>. For development we use a <a href="https://github.com/openDSME/inet">fork</a> that includes minor additions to the integration branch of the <a
+                        href="https://github.com/inet-framework/inet">INET framework</a>.</p>
 
-        <h3>
-          <a id="publications" class="anchor" href="#publications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-		  Publications
-        </h3>
-<div id='pub_250' class='bibEntry'>
-	<div class='entry'>
-		
-			<a href="https://www.ti5.tuhh.de/staff/koestler">Maximilian Köstler</a>, 			<a href="https://www.ti5.tuhh.de/staff/meier">Florian Kauer</a>, 			<a href="https://www.ti5.tuhh.de/staff/luebkert">Tobias Lübkert</a> and 			<a href="https://www.ti5.tuhh.de/staff/turau">Volker Turau</a>. Towards an Open Source Implementation of the IEEE 802.15.4 DSME Link Layer. In <i>Proceedings of the 15. GI/ITG KuVS Fachgespräch Sensornetze</i>, University of Applied Sciences Augsburg, Dept. of Computer Science, September 2016. Augsburg, Germany. 						</div>
-	<div class='links'>
-					<a href="javascript:toggleInfo('250','bibtex')">[BibTeX]</a>
-							<a href="javascript:toggleInfo('250','abstract')">[Abstract]</a>
-                                                                <a href="dsme.pdf">[PDF]</a>
-							</div>
-			<div id="bib_250" class="bibtex noshow">@InProceedings{Telematik_FGSN_openDSME,
-  author    = {Maximilian Köstler and Florian Kauer and Tobias Lübkert and Volker Turau},
-  editor    = {Juergen Scholz and Alexander von Bodisco},
-  title     = {Towards an Open Source Implementation of the IEEE 802.15.4 DSME Link Layer},
-  booktitle = {Proceedings of the 15. GI/ITG KuVS Fachgespräch Sensornetze},
-  pages     = ,
-  publisher = {University of Applied Sciences Augsburg, Dept. of Computer Science},
-  day       = {22-23},
-  month     = sep,
-  year      = 2016,
-  location  = {Augsburg, Germany},
-}</div>
-				<div id="abs_250" class="abstract noshow">
-			<b>Abstract</b>:
-			Reliable wireless solutions for large-scale automation are a major challenge today. The IEEE 802.15.4 standard forms the basis for many open and proprietary implementations. To reflect current state-of-the-art techniques, the IEEE has amended standard 802.15.4 with new MAC-layers such as TSCH, which resembles WirelessHART, and the Deterministic and Synchronous Multi-Channel Extension (DSME). This paper introduces openDSME, our implementation of IEEE 802.15.4 DSME. DSME aims at preventing packet collisions through slot reservation in networks where conventional CSMA/CA is not reliable enough. In this document, we will outline core features of DSME and openDSME, and present details of our implementation. Additionally, current research efforts on connected topics will be highlighted.
-		</div>
-	</div>	
+                <h3>
+                    <a id="contiki" class="anchor" href="#contiki" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+                    Contiki OS
+                </h3>
+                <p>For hardware deployments, openDSME is supported in <a href="https://github.com/openDSME/contiki">our fork of the Contiki OS</a> for the ARM based <a href="https://www.iot-lab.info/hardware/m3/">M3 Open Node</a> used by the <a
+                        href="https://www.iot-lab.info/">FIT IoT-lab</a>. To use it, check out <a href="https://github.com/openDSME/iot-lab">our fork of the IoT-LAB repository</a>.</p>
 
-<div id='pub_254' class='bibEntry'>
-	<div class='entry'>
-		
-			<a href="https://www.ti5.tuhh.de/staff/meier">Florian Kauer</a>, 			<a href="https://www.ti5.tuhh.de/staff/koestler">Maximilian Köstler</a>, 			<a href="https://www.ti5.tuhh.de/staff/luebkert">Tobias Lübkert</a> and 			<a href="https://www.ti5.tuhh.de/staff/turau">Volker Turau</a>. Formal Analysis and Verification of the IEEE 802.15.4 DSME Slot Allocation. In <i>Proceedings of the 19th ACM International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems</i>, November 2016, pp. 140-147. Malta. 						</div>
-	<div class='links'>
-					<a href="javascript:toggleInfo('254','bibtex')">[BibTeX]</a>
-							<a href="javascript:toggleInfo('254','abstract')">[Abstract]</a>
-							<a href="http://dx.doi.org/10.1145/2988287.2989148">[DOI]</a>
-					</div>
-			<div id="bib_254" class="bibtex noshow">@InProceedings{Telematik_MSWIM_Formal_DSME,
-  author    = {Florian Kauer and Maximilian Köstler and Tobias Lübkert and Volker Turau},
-  title     = {Formal Analysis and Verification of the IEEE 802.15.4 DSME Slot Allocation},
-  booktitle = {Proceedings of the 19th ACM International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems},
-  pages     = {140-147},
-  month     = nov,
-  year      = 2016,
-  location  = {Malta},
-}</div>
-				<div id="abs_254" class="abstract noshow">
-			<b>Abstract</b>:
-			Providing dependability is still a major issue for wireless mesh networks, which restrains their application in industrial contexts. The widespread CSMA/CA medium access can provide high throughput and low latency, but can not prevent packet loss due to collisions, especially in very large and dense networks. Time slotted medium access techniques together with a distributed slot management, as proposed by the Distributed Synchronous Multi-channel Extension (DSME) of the IEEE 802.15.4 standard, are promising to provide low packet loss, high scalability and bounded end-to-end delays. However, our implementation, openDSME, exposed some weaknesses. While the allocated slots allow for reliable data transmission, the slot management itself is conducted via CSMA/CA and is thus vulnerable to packet loss, eventually leading to an inconsistent slot allocation. This paper uses the UPPAAL framework for formal analysis and verification of the slot management process. The analysis identifies weaknesses of the slot allocation process under communication and node failures. However, it is shown that inconsistencies are eventually resolved and improvements to the procedure are proposed that reduce the negative impact of failed slot allocation procedures significantly.
-		</div>
-	</div>			
+                <h3>
+                    <a id="cometos" class="anchor" href="#cometos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+                    CometOS
+                </h3>
+                <p>Furthermore, openDSME is supported by the <a href="https://github.com/CometOS/CometOS">CometOS environment</a> also supporting the <a href="https://www.iot-lab.info/hardware/m3/">M3 Open Node</a> and the ATmega256RFR2. CometOS is,
+                    however, currently not updated to the newest version of openDSME.</p>
 
-<div id='pub_262' class='bibEntry'>
-	<div class='entry'>
-		
-			<a href="https://www.ti5.tuhh.de/staff/meier">Florian Kauer</a>, 			<a href="https://www.ti5.tuhh.de/staff/koestler">Maximilian Köstler</a>, 			<a href="https://www.ti5.tuhh.de/staff/luebkert">Tobias Lübkert</a> and 			<a href="https://www.ti5.tuhh.de/staff/turau">Volker Turau</a>. OpenDSME - A Portable Framework for Reliable Wireless Sensor and Actuator Networks (Demonstration). In <i>Proceedings of the 3rd International Conference on Networked Systems (NetSys 2017)</i>, March 2017. Göttingen, Germany. 						</div>
-	<div class='links'>
-					<a href="javascript:toggleInfo('262','bibtex')">[BibTeX]</a>
-							<a href="javascript:toggleInfo('262','abstract')">[Abstract]</a>
-							<a href="http://dx.doi.org/10.1109/NetSys.2017.7931495">[DOI]</a>
-					</div>
-			<div id="bib_262" class="bibtex noshow">@InProceedings{Telematik_Netsys_2017,
-  author    = {Florian Kauer and Maximilian Köstler and Tobias Lübkert and Volker Turau},
-  title     = {OpenDSME - A Portable Framework for Reliable Wireless Sensor and Actuator Networks (Demonstration)},
-  booktitle = {Proceedings of the 3rd International Conference on Networked Systems (NetSys 2017)},
-  day       = {13-16},
-  month     = mar,
-  year      = 2017,
-  location  = {Göttingen, Germany},
-}</div>
-				<div id="abs_262" class="abstract noshow">
-			<b>Abstract</b>:
-			The Deterministic and Synchronous Multi-Channel Extension (DSME) of the IEEE 802.15.4 standard provides a data link layer for time division multiple access in wireless mesh networks. The authors present openDSME, a portable implementation for hardware and simulators which promises reliable message transfer suitable for applications in demanding industrial environments. A demonstration has been developed to illustrate the performance of openDSME in a simulated network and to show its benefits over CSMA/CA.
-		</div>
-	</div>			
+                <h3>
+                    <a id="publications" class="anchor" href="#publications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+                    Publications
+                </h3>
+                <div id='pub_250' class='bibEntry'>
+                    <div class='entry'>
 
-<div id='pub_263' class='bibEntry'>
-	<div class='entry'>
-		
-			<a href="https://www.ti5.tuhh.de/staff/koestler">Maximilian Köstler</a> and 			<a href="https://www.ti5.tuhh.de/staff/meier">Florian Kauer</a>. A Remote Interface for Live Interaction with OMNeT++ Simulations. In <i>Proceedings of the 4th OMNeT++ Community Summit 2017</i>, September 2017. Bremen, Germany. 						</div>
-	<div class='links'>
-					<a href="javascript:toggleInfo('263','bibtex')">[BibTeX]</a>
-							<a href="javascript:toggleInfo('263','abstract')">[Abstract]</a>
-									<a href="http://arxiv.org/pdf/1709.02822.pdf">[PDF]</a>
-					<a href="https://www.ti5.tuhh.de/publications/2017/OMNET-2017-Session_4-01-Presentation.pdf">[Slides]</a>
-			</div>
-			<div id="bib_263" class="bibtex noshow">@InProceedings{Telematik_OMNETPP_2017,
-  author    = {Maximilian Köstler and Florian Kauer},
-  title     = {A Remote Interface for Live Interaction with OMNeT++ Simulations},
-  booktitle = {Proceedings of the 4th OMNeT++ Community Summit 2017},
-  number    = {arXiv:1709.02822},
-  day       = {07-08},
-  month     = sep,
-  year      = 2017,
-  location  = {Bremen, Germany},
-}</div>
-				<div id="abs_263" class="abstract noshow">
-			<b>Abstract</b>:
-			Discrete event simulators, such as OMNeT++, provide fast and convenient methods for the assessment of algorithms and protocols, especially in the context of wired and wireless networks. Usually, simulation parameters such as topology and traffic patterns are predefined to observe the behaviour reproducibly. However, for learning about the dynamic behaviour of a system, a live interaction that allows changing parameters on the fly is very helpful. This is especially interesting for providing interactive demonstrations at conferences and fairs. In this paper, we present a remote interface to OMNeT++ simulations that can be used to control the simulations while visualising real-time data merged from multiple OMNeT++ instances. We explain the software architecture behind our framework and how it can be used to build demonstrations on the foundation of OMNeT++.
-		</div>
-	</div>			
+                        <a href="https://www.ti5.tuhh.de/staff/koestler">Maximilian Köstler</a>, <a href="https://www.ti5.tuhh.de/staff/meier">Florian Kauer</a>, <a href="https://www.ti5.tuhh.de/staff/luebkert">Tobias Lübkert</a> and <a
+                            href="https://www.ti5.tuhh.de/staff/turau">Volker Turau</a>. Towards an Open Source Implementation of the IEEE 802.15.4 DSME Link Layer. In <i>Proceedings of the 15. GI/ITG KuVS Fachgespräch Sensornetze</i>, University of
+                        Applied
+                        Sciences Augsburg, Dept. of Computer Science, September 2016. Augsburg, Germany. </div>
+                    <div class='links'>
+                        <a href="javascript:toggleInfo('250','bibtex')">[BibTeX]</a>
+                        <a href="javascript:toggleInfo('250','abstract')">[Abstract]</a>
+                        <a href="dsme.pdf">[PDF]</a>
+                    </div>
+                    <div id="bib_250" class="bibtex noshow">@InProceedings{Telematik_FGSN_openDSME,
+                        author = {Maximilian Köstler and Florian Kauer and Tobias Lübkert and Volker Turau},
+                        editor = {Juergen Scholz and Alexander von Bodisco},
+                        title = {Towards an Open Source Implementation of the IEEE 802.15.4 DSME Link Layer},
+                        booktitle = {Proceedings of the 15. GI/ITG KuVS Fachgespräch Sensornetze},
+                        pages = ,
+                        publisher = {University of Applied Sciences Augsburg, Dept. of Computer Science},
+                        day = {22-23},
+                        month = sep,
+                        year = 2016,
+                        location = {Augsburg, Germany},
+                        }</div>
+                    <div id="abs_250" class="abstract noshow">
+                        <b>Abstract</b>:
+                        Reliable wireless solutions for large-scale automation are a major challenge today. The IEEE 802.15.4 standard forms the basis for many open and proprietary implementations. To reflect current state-of-the-art techniques, the
+                        IEEE has
+                        amended standard 802.15.4 with new MAC-layers such as TSCH, which resembles WirelessHART, and the Deterministic and Synchronous Multi-Channel Extension (DSME). This paper introduces openDSME, our implementation of IEEE
+                        802.15.4 DSME. DSME
+                        aims at preventing packet collisions through slot reservation in networks where conventional CSMA/CA is not reliable enough. In this document, we will outline core features of DSME and openDSME, and present details of our
+                        implementation.
+                        Additionally, current research efforts on connected topics will be highlighted.
+                    </div>
+                </div>
 
-        <h3>
-          <a id="tutorial" class="anchor" href="#tutorial" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-          openDSME Video Tutorials
-        </h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLucSPeJjMBgwOgIRB1GKiST__vPgwd2tQ" frameborder="0" allowfullscreen style="max-width: 100%;"></iframe>
-        <h3>
-          <a id="openDSME" class="anchor" href="#openDSME" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-          Main repository of openDSME
-        </h3>
-        <p>The repository of the core module can be found at <a href="https://github.com/openDSME/openDSME">github.com/openDSME/openDSME</a>.
-          Probably, you will never have to check out this repository directly, because it is integrated as a submodule in the other repositories.
-        </p>
+                <div id='pub_254' class='bibEntry'>
+                    <div class='entry'>
 
-        <h3>
-          <a id="inet--dsme" class="anchor" href="#inet--dsme" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-          OMNeT++ / INET
-          <img src="https://img.shields.io/coverity/scan/11194.svg" alt="Coverity Scan Build Status" style="height: 16px; margin-left: 20px;"/>
-        </h3>
-        <p>For conducting simulations, openDSME can run in the <a href="https://omnetpp.org/">OMNeT++ simulation environment</a> using the INET framework. The adaptation logic to run openDSME inside of INET is implemented in <a href="https://github.com/openDSME/inet-dsme">this repository</a>. For development we use a <a href="https://github.com/openDSME/inet">fork</a> that includes minor additions to the integration branch of the <a href="https://github.com/inet-framework/inet">INET framework</a>.</p>
+                        <a href="https://www.ti5.tuhh.de/staff/meier">Florian Kauer</a>, <a href="https://www.ti5.tuhh.de/staff/koestler">Maximilian Köstler</a>, <a href="https://www.ti5.tuhh.de/staff/luebkert">Tobias Lübkert</a> and <a
+                            href="https://www.ti5.tuhh.de/staff/turau">Volker Turau</a>. Formal Analysis and Verification of the IEEE 802.15.4 DSME Slot Allocation. In <i>Proceedings of the 19th ACM International Conference on Modeling, Analysis and
+                            Simulation
+                            of Wireless and Mobile Systems</i>, November 2016, pp. 140-147. Malta. </div>
+                    <div class='links'>
+                        <a href="javascript:toggleInfo('254','bibtex')">[BibTeX]</a>
+                        <a href="javascript:toggleInfo('254','abstract')">[Abstract]</a>
+                        <a href="http://dx.doi.org/10.1145/2988287.2989148">[DOI]</a>
+                    </div>
+                    <div id="bib_254" class="bibtex noshow">@InProceedings{Telematik_MSWIM_Formal_DSME,
+                        author = {Florian Kauer and Maximilian Köstler and Tobias Lübkert and Volker Turau},
+                        title = {Formal Analysis and Verification of the IEEE 802.15.4 DSME Slot Allocation},
+                        booktitle = {Proceedings of the 19th ACM International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems},
+                        pages = {140-147},
+                        month = nov,
+                        year = 2016,
+                        location = {Malta},
+                        }</div>
+                    <div id="abs_254" class="abstract noshow">
+                        <b>Abstract</b>:
+                        Providing dependability is still a major issue for wireless mesh networks, which restrains their application in industrial contexts. The widespread CSMA/CA medium access can provide high throughput and low latency, but can not
+                        prevent
+                        packet loss due to collisions, especially in very large and dense networks. Time slotted medium access techniques together with a distributed slot management, as proposed by the Distributed Synchronous Multi-channel Extension
+                        (DSME) of
+                        the IEEE 802.15.4 standard, are promising to provide low packet loss, high scalability and bounded end-to-end delays. However, our implementation, openDSME, exposed some weaknesses. While the allocated slots allow for reliable
+                        data
+                        transmission, the slot management itself is conducted via CSMA/CA and is thus vulnerable to packet loss, eventually leading to an inconsistent slot allocation. This paper uses the UPPAAL framework for formal analysis and
+                        verification of
+                        the slot management process. The analysis identifies weaknesses of the slot allocation process under communication and node failures. However, it is shown that inconsistencies are eventually resolved and improvements to the
+                        procedure are
+                        proposed that reduce the negative impact of failed slot allocation procedures significantly.
+                    </div>
+                </div>
 
-	<h3>
-          <a id="contiki" class="anchor" href="#contiki" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-	  Contiki OS
-	</h3>
-<p>For hardware deployments, openDSME is supported in <a href="https://github.com/openDSME/contiki">our fork of the Contiki OS</a> for the ARM based <a href="https://www.iot-lab.info/hardware/m3/">M3 Open Node</a> used by the <a href="https://www.iot-lab.info/">FIT IoT-lab</a>. To use it, check out <a href="https://github.com/openDSME/iot-lab">our fork of the IoT-LAB repository</a>.</p>
+                <div id='pub_262' class='bibEntry'>
+                    <div class='entry'>
 
-        <h3>
-          <a id="cometos" class="anchor" href="#cometos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-          CometOS
-        </h3>
-	<p>Furthermore, openDSME is supported by the <a href="https://github.com/CometOS/CometOS">CometOS environment</a> also supporting the <a href="https://www.iot-lab.info/hardware/m3/">M3 Open Node</a> and the ATmega256RFR2. CometOS is, however, currently not updated to the newest version of openDSME.</p>
+                        <a href="https://www.ti5.tuhh.de/staff/meier">Florian Kauer</a>, <a href="https://www.ti5.tuhh.de/staff/koestler">Maximilian Köstler</a>, <a href="https://www.ti5.tuhh.de/staff/luebkert">Tobias Lübkert</a> and <a
+                            href="https://www.ti5.tuhh.de/staff/turau">Volker Turau</a>. OpenDSME - A Portable Framework for Reliable Wireless Sensor and Actuator Networks (Demonstration). In <i>Proceedings of the 3rd International Conference on
+                            Networked
+                            Systems (NetSys 2017)</i>, March 2017. Göttingen, Germany. </div>
+                    <div class='links'>
+                        <a href="javascript:toggleInfo('262','bibtex')">[BibTeX]</a>
+                        <a href="javascript:toggleInfo('262','abstract')">[Abstract]</a>
+                        <a href="http://dx.doi.org/10.1109/NetSys.2017.7931495">[DOI]</a>
+                    </div>
+                    <div id="bib_262" class="bibtex noshow">@InProceedings{Telematik_Netsys_2017,
+                        author = {Florian Kauer and Maximilian Köstler and Tobias Lübkert and Volker Turau},
+                        title = {OpenDSME - A Portable Framework for Reliable Wireless Sensor and Actuator Networks (Demonstration)},
+                        booktitle = {Proceedings of the 3rd International Conference on Networked Systems (NetSys 2017)},
+                        day = {13-16},
+                        month = mar,
+                        year = 2017,
+                        location = {Göttingen, Germany},
+                        }</div>
+                    <div id="abs_262" class="abstract noshow">
+                        <b>Abstract</b>:
+                        The Deterministic and Synchronous Multi-Channel Extension (DSME) of the IEEE 802.15.4 standard provides a data link layer for time division multiple access in wireless mesh networks. The authors present openDSME, a portable
+                        implementation
+                        for hardware and simulators which promises reliable message transfer suitable for applications in demanding industrial environments. A demonstration has been developed to illustrate the performance of openDSME in a simulated
+                        network and
+                        to show its benefits over CSMA/CA.
+                    </div>
+                </div>
 
-      </section>
+                <div id='pub_263' class='bibEntry'>
+                    <div class='entry'>
+
+                        <a href="https://www.ti5.tuhh.de/staff/koestler">Maximilian Köstler</a> and <a href="https://www.ti5.tuhh.de/staff/meier">Florian Kauer</a>. A Remote Interface for Live Interaction with OMNeT++ Simulations. In <i>Proceedings
+                            of the 4th
+                            OMNeT++ Community Summit 2017</i>, September 2017. Bremen, Germany. </div>
+                    <div class='links'>
+                        <a href="javascript:toggleInfo('263','bibtex')">[BibTeX]</a>
+                        <a href="javascript:toggleInfo('263','abstract')">[Abstract]</a>
+                        <a href="http://arxiv.org/pdf/1709.02822.pdf">[PDF]</a>
+                        <a href="https://www.ti5.tuhh.de/publications/2017/OMNET-2017-Session_4-01-Presentation.pdf">[Slides]</a>
+                    </div>
+                    <div id="bib_263" class="bibtex noshow">@InProceedings{Telematik_OMNETPP_2017,
+                        author = {Maximilian Köstler and Florian Kauer},
+                        title = {A Remote Interface for Live Interaction with OMNeT++ Simulations},
+                        booktitle = {Proceedings of the 4th OMNeT++ Community Summit 2017},
+                        number = {arXiv:1709.02822},
+                        day = {07-08},
+                        month = sep,
+                        year = 2017,
+                        location = {Bremen, Germany},
+                        }</div>
+                    <div id="abs_263" class="abstract noshow">
+                        <b>Abstract</b>:
+                        Discrete event simulators, such as OMNeT++, provide fast and convenient methods for the assessment of algorithms and protocols, especially in the context of wired and wireless networks. Usually, simulation parameters such as
+                        topology and
+                        traffic patterns are predefined to observe the behaviour reproducibly. However, for learning about the dynamic behaviour of a system, a live interaction that allows changing parameters on the fly is very helpful. This is
+                        especially
+                        interesting for providing interactive demonstrations at conferences and fairs. In this paper, we present a remote interface to OMNeT++ simulations that can be used to control the simulations while visualising real-time data
+                        merged from
+                        multiple OMNeT++ instances. We explain the software architecture behind our framework and how it can be used to build demonstrations on the foundation of OMNeT++.
+                    </div>
+                </div>
+                <div id='pub_292' class='bibEntry'>
+                    <div class='entry'>
+
+                        <a href="https://www.ti5.tuhh.de//staff/meyer">Florian Meyer</a>, <a href="https://www.ti5.tuhh.de//staff/mantilla">Ivonne Andrea Mantilla-Gonzales</a>, <a href="https://www.ti5.tuhh.de//staff/meier">Florian Kauer</a> and <a href="https://www.ti5.tuhh.de//staff/turau">Volker Turau</a>. Performance Analysis of the Slot
+                        Allocation Handshake in IEEE 802.15.4 DSME. In <i>Proceedings of 18th International Conference on Ad Hoc Networks and Wireless (AdHoc-Now 2019)</i>, Springer, October 2019, pp. 102–117. Luxembourg. </div>
+                    <div class='links'>
+                        <a href="javascript:toggleInfo('292','bibtex')">[BibTeX]</a>
+                        <a href="javascript:toggleInfo('292','abstract')">[Abstract]</a>
+                        <a href="http://dx.doi.org/10.1007/978-3-030-31831-4_8">[DOI]</a>
+                    </div>
+                    <div id="bib_292" class="bibtex noshow">@InProceedings{Telematik_adhocnow_2019,
+                        author = {Florian Meyer and Ivonne Andrea Mantilla-Gonzales and Florian Kauer and Volker Turau},
+                        title = {Performance Analysis of the Slot Allocation Handshake in IEEE 802.15.4 DSME},
+                        booktitle = {Proceedings of 18th International Conference on Ad Hoc Networks and Wireless (AdHoc-Now 2019)},
+                        pages = {102-117},
+                        publisher = {Springer},
+                        day = {1-3},
+                        month = oct,
+                        year = 2019,
+                        location = {Luxembourg},
+                        }</div>
+                    <div id="abs_292" class="abstract noshow">
+                        <b>Abstract</b>:
+                        Wireless mesh networks using IEEE 802.15.4 are getting increasingly popular for industrial applications because of low energy consumption and low maintenance costs. The IEEE 802.15.4 standard introduces DSME (Deterministic and
+                        Synchronous Multi-channel Extension). DSME uses time-slotted channel access to guarantee timely data delivery, multi-channel communication, and frequency hopping to mitigate the effects of external interferences. A
+                        distinguishing feature of DSME is its flexibility and adaptability to time-varying network traffic and to changes in the network topology. In this paper we evaluate the ability of DSME to adapt to time-varying network traffic.
+                        We examine the limits for slot allocation rates for different topologies. The evaluation is performed with openDSME, an open-source implementation of DSME.
+                    </div>
+                </div>
+                <div id='pub_285' class='bibEntry'>
+                    <div class='entry'>
+                        <a href="https://www.ti5.tuhh.de/staff/meyer">Florian Meyer</a> and <a href="https://www.ti5.tuhh.de/staff/turau">Volker Turau</a>. Delay-Bounded Scheduling in IEEE 802.15.4e DSME using Linear Programming. In <i>Proceedings of 15th International Conference on Distributed
+                            Computing in Sensor Systems (DCOSS)</i>, May 2019, pp. 659–666. Santorini, Greece. </div>
+                    <div class='links'>
+                        <a href="javascript:toggleInfo('285','bibtex')">[BibTeX]</a>
+                        <a href="javascript:toggleInfo('285','abstract')">[Abstract]</a>
+                        <a href="http://dx.doi.org/10.1109/DCOSS.2019.00119">[DOI]</a>
+                        <a href="https://www.ti5.tuhh.de/publications/2019/slides_FM_Santorini.pdf">[Slides]</a>
+                    </div>
+                    <div id="bib_285" class="bibtex noshow">@InProceedings{Telematik_ISIoT_2019,
+                        author = {Florian Meyer and Volker Turau},
+                        title = {Delay-Bounded Scheduling in IEEE 802.15.4e DSME using Linear Programming},
+                        booktitle = {Proceedings of 15th International Conference on Distributed Computing in Sensor Systems (DCOSS)},
+                        pages = {659-666},
+                        day = {29-31},
+                        month = may,
+                        year = 2019,
+                        location = {Santorini, Greece},
+                        }</div>
+                    <div id="abs_285" class="abstract noshow">
+                        <b>Abstract</b>:
+                        The Deterministic and Synchronous Multi-Channel Extension (DSME) protocol is a recent amendment to the IEEE 802.15.4 standard. It combines contention-based and time-division medium access, offers channel diversity, and is
+                        aimed to support IIoT applications with stringent requirements in terms of timeliness and reliability. In this paper, we show how to configure DSME for a given data collection task. This includes the definition of the slot and
+                        frame length and the slot and channel schedule. We formulate different scheduling strategies as linear programs minimizing latency and energy. We verify our results through theoretical analysis and simulations and compare them
+                        with state-of-the-art scheduling algorithms. The results indicate a reduced delay of up to 80% for deep networks while also increasing reliability. Additionally, the proposed scheduling strategies significantly reduce the
+                        required buffer size.
+                    </div>
+                </div>
+
+            </section>
 
       <aside id="sidebar">
         <a href="https://github.com/openDSME" class="button code">Code</a>
