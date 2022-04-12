@@ -132,8 +132,15 @@
                     What is openDSME?
                 </h3>
                 <p>openDSME is an open source implementation of IEEE 802.15.4 DSME.
-                    It is designed be portable for various platforms, including simulation environments and hardware platforms. It is developed at the <a href="http://www.ti5.tu-harburg.de/">Institute of Telematics at Hamburg University of
-                        Technology</a>. Feel free to <a href="http://www.ti5.tu-harburg.dehttps://www.ti5.tuhh.de/staff/meier/">contact us</a> if you are interested in using our software or just have a look at the provided repositories.</p>
+                    It is designed be portable for various platforms, including simulation environments and hardware platforms. It has been initially designed and developed at the <a href="http://www.ti5.tu-harburg.de/">Institute of Telematics at Hamburg University of
+                    Technology</a>.
+
+                    <div style="background-color: #dcf4fc; display: inline-block; margin: 0px 20px; padding: 10px; border-style: solid">
+                        <p style="font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; font-weight: bold; font-size: 19px;">
+                            Further Development in RIOT
+                        </p>
+                        As of now, openDSME has been adopted by developers at <a href="https://www.riot-os.org/">RIOT</a>. Any further development is conducted by them with additional contributions from the community. Feel free to <a href="https://inet.haw-hamburg.de/members/jose-alamos">contact them</a> if you are interested in using the software or just have a look at the provided repositories.</p>
+                    </div>
                 <h3>
                     <a id="whatisDSME" class="anchor" href="#whatisDSME" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
                     What is IEEE 802.15.4 DSME?
@@ -149,7 +156,7 @@
                     <a id="openDSME" class="anchor" href="#openDSME" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
                     Main repository of openDSME
                 </h3>
-                <p>The repository of the core module can be found at <a href="https://github.com/openDSME/openDSME">github.com/openDSME/openDSME</a>.
+                <p>The repository of the core module can be found at <a href="https://github.com/RIOT-OS/openDSME">https://github.com/RIOT-OS/openDSME</a>.
                     Probably, you will never have to check out this repository directly, because it is integrated as a submodule in the other repositories.
                 </p>
 
@@ -162,7 +169,7 @@
                         href="https://github.com/openDSME/inet-dsme">this repository</a>. For development we use a <a href="https://github.com/openDSME/inet">fork</a> that includes minor additions to the integration branch of the <a
                         href="https://github.com/inet-framework/inet">INET framework</a>.</p>
 
-                <h3>
+                <!--<h3>
                     <a id="contiki" class="anchor" href="#contiki" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
                     Contiki OS
                 </h3>
@@ -174,7 +181,7 @@
                     CometOS
                 </h3>
                 <p>Furthermore, openDSME is supported by the <a href="https://github.com/CometOS/CometOS">CometOS environment</a> also supporting the <a href="https://www.iot-lab.info/docs/boards/iot-lab-m3/">M3 Open Node</a> and the ATmega256RFR2. CometOS is,
-                    however, currently not updated to the newest version of openDSME.</p>
+                    however, currently not updated to the newest version of openDSME.</p>-->
 
                 <h3>
                     <a id="publications" class="anchor" href="#publications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
@@ -399,11 +406,137 @@
                         required buffer size.
                     </div>
                 </div>
+                <div id='pub_296' class='bibEntry'>
+                    <div class='entry'>
+                        <a href="https://www.ti5.tuhh.de/staff/meyer">Florian Meyer</a>, <a href="https://www.ti5.tuhh.de/staff/mantilla">Ivonne Mantilla</a> and <a href="https://www.ti5.tuhh.de/staff/turau">Volker Turau</a>. Sending Multiple Packets per Guaranteed Time Slot in IEEE 802.15.4 DSME: Analysis and
+                        Evaluation. <i>Internet Technology Letters</i>, April 2020. </div>
+                    <div class='links'>
+                        <a href="javascript:toggleInfo('296','bibtex')">[BibTeX]</a>
+                        <a href="javascript:toggleInfo('296','abstract')">[Abstract]</a>
+                        <a href="http://dx.doi.org/10.1002/itl2.167">[DOI]</a>
+                        <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1002/itl2.167">[PDF]</a>
+                    </div>
+                    <div id="bib_296" class="bibtex noshow">@Article{Telematik__2020,
+                        author = {Florian Meyer and Ivonne Mantilla and Volker Turau},
+                        title = {Sending Multiple Packets per Guaranteed Time Slot in IEEE 802.15.4 DSME: Analysis and Evaluation},
+                        pages = ,
+                        journal = {Internet Technology Letters},
+                        publisher = {Wiley Online Scientific},
+                        month = apr,
+                        year = 2020,
+                        }</div>
+                    <div id="abs_296" class="abstract noshow">
+                        <b>Abstract</b>:
+                        Coping with bursty traffic is a common yet challenging task in the industrial Internet of Things (IoT). For example, 6LoWPAN 1 is a standard that defines the integration of LoWPAN 2 with IPv6, by fragmenting large IPv6 packets
+                        into several smaller MAC‐layer packets. Therefore, it is necessary to envision message delivery mechanisms, which provide support for highly varying traffic. In this paper, we analyze sending multiple packets per guaranteed
+                        time slot (GTS) in IEEE 802.15.4 DSME to alleviate traffic during the contention‐access period (CAP) and increase the reliability in scenarios with bursty traffic. The evaluation shows that increasing parameter SO extends the
+                        network throughput beyond default operating conditions and also provides overprovisioning beneficial for delivering sporadic messages. A comparison with the transmission of a single packet per GTS demonstrates a reduction of
+                        the total number of transmitted CAP messages by 99% while increasing the packet reception ratio by 48% for bursts with 20 packets.
+                    </div>
+                </div>
+                <div id='pub_303' class='bibEntry'>
+                    <div class='entry'>
+                        <a href="https://www.ti5.tuhh.de/staff/meyer">Florian Meyer</a>, <a href="https://www.ti5.tuhh.de/staff/mantilla">Ivonne Andrea Mantilla-Gonzales</a> and <a href="https://www.ti5.tuhh.de/staff/turau">Volker Turau</a>. New CAP Reduction Mechanisms for IEEE 802.15.4 DSME to Support Fluctuating
+                        Traffic
+                        in IoT
+                        Systems. In <i>Proceedings of 19th International Conference on Ad Hoc Networks and Wireless (AdHoc-Now 2020)</i>, Springer, October 2020, pp. 159–179. Bari, Italy / Virtually. </div>
+                    <div class='links'>
+                        <a href="javascript:toggleInfo('303','bibtex')">[BibTeX]</a>
+                        <a href="javascript:toggleInfo('303','abstract')">[Abstract]</a>
+                        <a href="http://dx.doi.org/10.1007/978-3-030-61746-2_13">[DOI]</a>
+                        <a href="https://www.ti5.tuhh.de/publications/2020/Ivonne_adhoc2020_slides.pdf">[Slides]</a>
+                    </div>
+                    <div id="bib_303" class="bibtex noshow">@InProceedings{Telematik_adhocnow_2020,
+                        author = {Florian Meyer and Ivonne Andrea Mantilla-Gonzales and Volker Turau},
+                        title = {New CAP Reduction Mechanisms for IEEE 802.15.4 DSME to SupportFluctuating Traffic in IoT Systems},
+                        booktitle = {Proceedings of 19th International Conference on Ad Hoc Networks and Wireless (AdHoc-Now 2020)},
+                        pages = {159-179},
+                        publisher = {Springer},
+                        day = {19-21},
+                        month = oct,
+                        year = 2020,
+                        location = {Bari, Italy / Virtually},
+                        }</div>
+                    <div id="abs_303" class="abstract noshow">
+                        <b>Abstract</b>:
+                        In 2015, the IEEE 802.15.4 standard was expanded by theDeterministic and Synchronous Multi-Channel Extension (DSME) toincrease reliability, scalability and energy-efficiency in industrial appli-cations. The extension offers a
+                        TDMA/FDMA-based
+                        channel access,where time is divided into two alternating phases, a contention accessperiod (CAP) and a contention free period (CFP). During the CAP, transmission slots can be allocated offering an exclusive access to
+                        theshared
+                        medium during
+                        the CFP. The fractionτof CFP’s time slots ina dataframe is a critical value, because it directly influences agility andthroughput. A high throughput demands that the CFP is much longerthan the CAP, i.e., a high value ofτ,
+                        because
+                        application
+                        data is only sentduring the CFP. High agility is given if the expected waiting time to senda CAP message is short and that the length of the CAPs are long enoughto accommodate necessary GTS negotiations, i.e., a low value ofτ.
+                        OnceDSME is
+                        configured according to the needs of an application,τcan onlyassume one of two values and cannot be changed at run-time. In thispaper, we propose two extensions of DSME that allow to adoptτto thecurrent traffic pattern. We
+                        show
+                        theoretically
+                        and through simulationsthat the proposed extensions provide a high degree of responsiveness totraffic fluctuations while keeping the throughput high.
+                    </div>
+                </div>
+                <div id='pub_309' class='bibEntry'>
+                <div class='entry'>
 
-            </section>
+                    <a href="https://www.ti5.tuhh.de/staff/meyer">Florian Meyer</a> and <a href="https://www.ti5.tuhh.de/staff/turau">Volker Turau</a>. QMA: A Resource-efficient, Q-learning-based Multiple Access Scheme for the IIoT. In <i>2021 IEEE 41st International Conference on Distributed
+                        Computing
+                        Systems (ICDCS)</i>, IEEE, October 2021, pp. 864–874. Washington DC, USA / Virtually. </div>
+                <div class='links'>
+                    <a href="javascript:toggleInfo('309','bibtex')">[BibTeX]</a>
+                    <a href="javascript:toggleInfo('309','abstract')">[Abstract]</a>
+                    <a href="http://dx.doi.org/10.1109/ICDCS51616.2021.00087">[DOI]</a>
+                    <a href="https://youtu.be/DjlAPTempAA">[URL]</a>
+                </div>
+                <div id="bib_309" class="bibtex noshow">@InProceedings{Telematik_icdcs_2021,
+                    author = {Florian Meyer and Volker Turau},
+                    title = {QMA: A Resource-efficient, Q-learning-based Multiple Access Scheme for the IIoT},
+                    booktitle = {2021 IEEE 41st International Conference on Distributed Computing Systems (ICDCS)},
+                    pages = {864-874},
+                    publisher = {IEEE},
+                    day = {7-10},
+                    month = oct,
+                    year = 2021,
+                    location = {Washington DC, USA / Virtually},
+                    }</div>
+                <div id="abs_309" class="abstract noshow">
+                    <b>Abstract</b>:
+                    Many MAC protocols for the Industrial Internet of Things, such as IEEE 802.15.4 and its extensions, require contention-based channel access for management traffic, e.g., for slot (de)allocations and broadcasts. In many cases,
+                    subtle but
+                    hidden patterns characterize this secondary traffic, but present contention-based protocols are unaware of these patterns and therefore cannot exploit them. Especially in dense networks, these protocols often do not provide
+                    sufficient
+                    throughput and reliability for primary traffic, i.e., they cannot allocate transmission slots in time. In this paper, we propose QMA, a contention-based multiple access scheme based on Q-learning. It dynamically adjusts
+                    transmission times
+                    to avoid collisions by learning patterns in contention-based traffic. We show that QMA solves the hidden node problem without the overhead for RTS/CTS messages and, for example, increases throughput from 10 packets/s to 50
+                    packets/s in a
+                    hidden three-node scenario without sacrificing reliability. Additionally, QMA&#039;s scalability is evaluated in a realistic scenario for slot (de)allocation in IEEE 802.15.4 DSME, where it achieves up to twice more slot
+                    (de)allocations
+                    per second.
+                </div>
+            </div>
+            <div id='pub_312' class='bibEntry'>
+                <div class='entry'>
+                    <a href="https://www.ti5.tuhh.de/staff/meyer">Florian Meyer</a>, Phil Malessa, Jan Diercks and <a href="https://www.ti5.tuhh.de/staff/turau">Volker Turau</a>. Are Group Acknowledgements Worth Anything in IEEE 802.15.4 DSME: A
+                    Comparative Analysis. In <i>Accepted for Publication
+                        in Proceedings of 5th International Conference on Cloud and Internet of Things, CIoT &#039;22</i>, IEEE, March 2022. Marrakesh, Morocco. </div>
+                <div class='links'>
+                    <a href="javascript:toggleInfo('312','bibtex')">[BibTeX]</a>
+                </div>
+                <div id="bib_312" class="bibtex noshow">@InProceedings{Telematik_CIoT_2021,
+                    author = {Florian Meyer and Phil Malessa and Jan Diercks and Volker Turau},
+                    title = {Are Group Acknowledgements Worth Anything in IEEE 802.15.4 DSME: A Comparative Analysis},
+                    booktitle = {Accepted for Publication in Proceedings of 5th International Conference on Cloud and Internet of Things, CIoT &#039;22},
+                    pages = ,
+                    publisher = {IEEE},
+                    day = {28-30},
+                    month = mar,
+                    year = 2022,
+                    location = {Marrakesh, Morocco},
+                    }</div>
+            </div>
+    </section>
 
       <aside id="sidebar">
-        <a href="https://github.com/openDSME" class="button code">Code</a>
+        <a href="https://github.com/RIOT-OS/openDSME" class="button code">Code</a>
         <!--<a href="https://github.com/openDSME/openDSME/wiki" class="button wiki">Wiki</a>-->
         <!--<script type="text/javascript" id="WolframAlphaScript3f63662ae7084d9618e3b3e291f94b41" src="//www.wolframalpha.com/widget/widget.jsp?id=3f63662ae7084d9618e3b3e291f94b41&theme=orange"></script>
         <script type="text/javascript" id="WolframAlphaScriptecb4107d833b6db777fab761ee6ebab3" src="//www.wolframalpha.com/widget/widget.jsp?id=ecb4107d833b6db777fab761ee6ebab3&theme=orange"></script>-->
@@ -432,7 +565,7 @@
 			<script>
 			/**
 			     * Last modified publication
-			     */	
+			     */
 
 			document.write('<h3> Last modified on: ' + document.lastModified +'<\/h3>');
 			</script>
